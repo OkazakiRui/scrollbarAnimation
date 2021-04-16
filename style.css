@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@-webkit-keyframes hueloop {
+  0%,
+  100% {
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+  50% {
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes hueloop {
+  0%,
+  100% {
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+  50% {
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg);
+  }
+}
+
+.padding {
+  padding: 40px;
+  background-color: black;
+  color: white;
+}
+
+.padding h1 {
+  font-size: 4rem;
+}
+
+.padding h2 {
+  font-size: 3rem;
+}
+
+.padding p {
+  font-size: 1.8rem;
+  line-height: 2.75rem;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+#path,
+#bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 10px;
+}
+
+#path {
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+#bar {
+  background: -webkit-gradient(linear, left bottom, left top, from(#ff0000), to(#fbff00));
+  background: linear-gradient(to top, #ff0000, #fbff00);
+  -webkit-animation: hueloop 5s linear infinite;
+          animation: hueloop 5s linear infinite;
+}
+
+#bar::before, #bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(#ff0000), to(#fbff00));
+  background: linear-gradient(to top, #ff0000, #fbff00);
+}
+
+#bar::before {
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+
+#bar::after {
+  -webkit-filter: blur(30px);
+          filter: blur(30px);
+}
+/*# sourceMappingURL=style.css.map */
